@@ -1,6 +1,6 @@
 package com.ecosystem.userservice.jpa.repository;
 
-import com.ecosystem.userservice.jpa.entity.UserEntity;
+import com.ecosystem.userservice.domain.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

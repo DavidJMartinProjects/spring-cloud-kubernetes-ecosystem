@@ -1,4 +1,4 @@
-package com.ecosystem.userservice.jpa.entity;
+package com.ecosystem.userservice.domain.entity;
 
 import lombok.Data;
 

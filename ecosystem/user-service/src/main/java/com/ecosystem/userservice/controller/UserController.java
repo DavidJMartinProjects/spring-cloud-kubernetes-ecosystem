@@ -1,6 +1,6 @@
 package com.ecosystem.userservice.controller;
 
-import com.ecosystem.userservice.domain.UserDto;
+import com.ecosystem.userservice.domain.pojo.UserDto;
 import com.ecosystem.userservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

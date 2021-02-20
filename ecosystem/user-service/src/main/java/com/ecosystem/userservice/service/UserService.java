@@ -1,6 +1,6 @@
 package com.ecosystem.userservice.service;
 
-import com.ecosystem.userservice.domain.UserDto;
+import com.ecosystem.userservice.domain.pojo.UserDto;
 import com.ecosystem.userservice.jpa.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

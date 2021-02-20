@@ -1,4 +1,4 @@
-package com.ecosystem.userservice.domain;
+package com.ecosystem.userservice.domain.pojo;
 
 import lombok.Data;
 

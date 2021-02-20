@@ -1,6 +1,6 @@
 package com.ecosystem.userservice.jpa.dao;
 
-import com.ecosystem.userservice.domain.UserDto;
+import com.ecosystem.userservice.domain.pojo.UserDto;
 import com.ecosystem.userservice.jpa.repository.UserRepository;
 import com.ecosystem.userservice.mapper.UserDtoMapper;
 import lombok.extern.slf4j.Slf4j;

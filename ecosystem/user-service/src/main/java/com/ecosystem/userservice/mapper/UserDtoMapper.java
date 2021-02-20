@@ -1,7 +1,7 @@
 package com.ecosystem.userservice.mapper;
 
-import com.ecosystem.userservice.domain.UserDto;
-import com.ecosystem.userservice.jpa.entity.UserEntity;
+import com.ecosystem.userservice.domain.pojo.UserDto;
+import com.ecosystem.userservice.domain.entity.UserEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
