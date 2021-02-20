@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: number-service
+build:
+  artifacts:
+  - image: ecosystem/number-service
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - /kubernetes-manifests/*.yaml
