@@ -23,7 +23,24 @@ public class UserControllerTests {
     MockMvc mockMvc;
 
     @Test
-    public void given_usersUrl_when_getRequestOnBasePath_then_OK() throws Exception {
+    public void given_basePathUrl_when_getRequestOnBasePath_then_OK() throws Exception {
+
+        // given
+        String url = UserController.BASE_PATH;
+        String expectedResponse = "success. users-service is online.";
+
+        // when then
+        ResultActions response = mockMvc.perform(get(url));
+
+        // then
+        response
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", is(expectedResponse)));
+
+    }
+
+    @Test
+    public void given_usersUrl_when_getRequestOnUsersPath_then_OK() throws Exception {
 
         // given
         String url = UserController.BASE_PATH + UserController.USERS_URL;

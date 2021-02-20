@@ -14,10 +14,10 @@ import java.util.List;
 public class UserDao {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    UserDtoMapper userMapper;
+    private UserDtoMapper userMapper;
 
     public List<UserDto> fetchAllUsers() {
         return userMapper.from(userRepository.findAll());

@@ -18,11 +18,8 @@ public class UserEntity {
     private long id;
 
     private String firstname;
-
     private String lastname;
-
     private int score;
-
     private int rank;
 
 }

@@ -20,7 +20,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
+    @GetMapping()
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     public String getGreeting() {
