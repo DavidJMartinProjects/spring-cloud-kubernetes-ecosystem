@@ -27,7 +27,7 @@ public class NumberServiceController {
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     public int getRandomNumber() {
-        log.info("received GET request to {}.", RANDOM_NUMBER_URL);
+        log.info("received GET request to {}.", BASE_PATH + RANDOM_NUMBER_URL);
         return new Random().nextInt(UPPER_BOUNDARY);
     }
 
