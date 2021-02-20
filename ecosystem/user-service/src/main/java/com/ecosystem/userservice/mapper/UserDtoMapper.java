@@ -1,4 +1,4 @@
-package com.ecosystem.userservice.jpa.mapper;
+package com.ecosystem.userservice.mapper;
 
 import com.ecosystem.userservice.domain.UserDto;
 import com.ecosystem.userservice.jpa.entity.UserEntity;

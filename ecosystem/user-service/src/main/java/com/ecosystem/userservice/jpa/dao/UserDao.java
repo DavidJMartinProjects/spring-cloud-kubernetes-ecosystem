@@ -1,7 +1,8 @@
-package com.ecosystem.userservice.jpa.repository;
+package com.ecosystem.userservice.jpa.dao;
 
 import com.ecosystem.userservice.domain.UserDto;
-import com.ecosystem.userservice.jpa.mapper.UserDtoMapper;
+import com.ecosystem.userservice.jpa.repository.UserRepository;
+import com.ecosystem.userservice.mapper.UserDtoMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

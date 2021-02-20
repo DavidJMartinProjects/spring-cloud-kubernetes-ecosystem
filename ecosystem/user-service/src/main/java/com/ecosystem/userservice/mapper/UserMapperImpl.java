@@ -1,4 +1,4 @@
-package com.ecosystem.userservice.jpa.mapper;
+package com.ecosystem.userservice.mapper;
 
 import org.springframework.stereotype.Component;
 
