@@ -25,7 +25,6 @@ public class NumberServiceControllerTests {
 
     @Test
     public void given_basePathUrl_when_getRequestOnBasePath_then_OK() throws Exception {
-
         // given
         String url = NumberServiceController.BASE_PATH;
         String expectedResponse = "success. number-service is online.";
@@ -37,12 +36,10 @@ public class NumberServiceControllerTests {
         response
             .andExpect(status().isOk())
             .andExpect(jsonPath("$", is(expectedResponse)));
-
     }
 
     @Test
     public void given_randomNumberUrl_when_getRequestOnRandomNumberUrl_then_OK() throws Exception {
-
         // given
         String url = NumberServiceController.BASE_PATH + NumberServiceController.RANDOM_NUMBER_URL;
 
@@ -53,7 +50,6 @@ public class NumberServiceControllerTests {
         response
             .andExpect(status().isOk())
             .andExpect(jsonPath("$", lessThan(NumberServiceController.UPPER_BOUNDARY)));
-
     }
 
 }
