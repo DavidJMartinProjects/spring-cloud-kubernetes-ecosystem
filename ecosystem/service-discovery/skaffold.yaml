@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: user-service
+build:
+  artifacts:
+    - image: ecosystem/service-discovery
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - /kubernetes-manifests/*.yaml

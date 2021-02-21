@@ -34,8 +34,8 @@ public class UserControllerTests {
 
         // then
         response
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", is(expectedResponse)));
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$", is(expectedResponse)));
 
     }
 
