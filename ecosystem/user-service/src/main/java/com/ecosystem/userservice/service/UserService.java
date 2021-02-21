@@ -13,7 +13,7 @@ public class UserService {
     @Autowired
     UserDao userDao;
 
-    public List<UserDto> fetchAllUsers() {
+    public List<UserDto> getAllUsers() {
         return userDao.fetchAllUsers();
     }
 

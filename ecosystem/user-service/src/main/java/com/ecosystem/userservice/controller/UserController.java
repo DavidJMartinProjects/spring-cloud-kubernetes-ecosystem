@@ -33,7 +33,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     public List<UserDto> getAllUsers() {
         log.info("received GET request to {}.", BASE_PATH + USERS_URL);
-        return userService.fetchAllUsers();
+        return userService.getAllUsers();
     }
 
 }
