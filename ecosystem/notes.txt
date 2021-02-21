@@ -1,0 +1,12 @@
+****************************
+Create a new Angular
+
+install nodejs
+install npm
+npm install -g @angular/cli
+ng new frontend-gui
+go into directory and
+cmd code . to open on visual code ide
+to run: ng serve
+got to http://localhost:4200/ for landing page
+****************************
