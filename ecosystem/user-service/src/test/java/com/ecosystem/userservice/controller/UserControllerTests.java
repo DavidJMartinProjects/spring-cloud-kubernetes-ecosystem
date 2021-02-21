@@ -28,7 +28,7 @@ public class UserControllerTests {
         String url = UserController.BASE_PATH;
         String expectedResponse = "success. users-service is online.";
 
-        // when then
+        // when
         ResultActions response = mockMvc.perform(get(url));
 
         // then
@@ -42,7 +42,7 @@ public class UserControllerTests {
         // given
         String url = UserController.BASE_PATH + UserController.USERS_URL;
 
-        // when then
+        // when 
         ResultActions response = mockMvc.perform(get(url));
 
         // then

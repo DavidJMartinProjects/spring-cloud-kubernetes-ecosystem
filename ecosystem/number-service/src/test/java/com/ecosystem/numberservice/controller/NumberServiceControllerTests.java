@@ -29,7 +29,7 @@ public class NumberServiceControllerTests {
         String url = NumberServiceController.BASE_PATH;
         String expectedResponse = "success. number-service is online.";
 
-        // when then
+        // when
         ResultActions response = mockMvc.perform(get(url));
 
         // then
@@ -43,7 +43,7 @@ public class NumberServiceControllerTests {
         // given
         String url = NumberServiceController.BASE_PATH + NumberServiceController.RANDOM_NUMBER_URL;
 
-        // when then
+        // when
         ResultActions response = mockMvc.perform(get(url));
 
         // then
