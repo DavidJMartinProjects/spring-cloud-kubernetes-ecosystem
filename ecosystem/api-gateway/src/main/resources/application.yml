@@ -1,2 +1,22 @@
 server:
   port: 9000
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+      routes:
+        - id: number-service
+          uri: http://localhost:9091/
+          predicates:
+            - Path=/number-service/**
+        - id: user-service
+          uri: http://localhost:9092/
+          predicates:
+            - Path=/user-service/**
