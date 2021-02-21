@@ -11,8 +11,8 @@
 
 	<artifactId>user-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
 
 	<name>user-service</name>
 	<description>The user service</description>

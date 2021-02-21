@@ -20,6 +20,7 @@
         <module>number-service</module>
         <module>user-service</module>
         <module>service-discovery</module>
+        <module>api-gateway</module>
     </modules>
 
 </project>

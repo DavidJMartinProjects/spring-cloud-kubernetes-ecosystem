@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: api-gateway
+build:
+  artifacts:
+    - image: ecosystem/api-gateway
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - /kubernetes-manifests/*.yaml
