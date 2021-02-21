@@ -16,11 +16,27 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <spring-cloud.version>2020.0.1</spring-cloud.version>
+    </properties>
+
     <modules>
         <module>number-service</module>
         <module>user-service</module>
         <module>service-discovery</module>
         <module>api-gateway</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
