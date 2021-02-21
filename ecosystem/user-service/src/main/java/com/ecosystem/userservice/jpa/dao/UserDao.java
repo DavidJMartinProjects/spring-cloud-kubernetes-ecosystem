@@ -17,10 +17,10 @@ public class UserDao {
     private UserRepository userRepository;
 
     @Autowired
-    private UserDtoMapper userMapper;
+    private UserDtoMapper userDtoMapper;
 
     public List<UserDto> fetchAllUsers() {
-        return userMapper.from(userRepository.findAll());
+        return userDtoMapper.from(userRepository.findAll());
     }
 
 }
