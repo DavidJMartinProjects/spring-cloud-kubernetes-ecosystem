@@ -10,7 +10,6 @@ spring:
       discovery:
         locator:
           enabled: true
-
       routes:
         - id: number-service
           uri: http://localhost:9091/

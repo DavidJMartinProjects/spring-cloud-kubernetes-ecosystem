@@ -1,0 +1,31 @@
+** tutorials **
+https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengsettingupingresscontroller.htm
+https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-ingress-guide-nginx-example.html
+***************
+
+** installation steps **
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.30.0/deploy/static/mandatory.yaml
+** docs @ https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md **
+
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "//CN=nginxsvc\O=nginxsvc"
+kubectl create secret tls tls-secret --key tls.key --cert tls.crt
+
+create -f cloud generic.yaml
+create -f user-service.yaml
+create -f ingress.yaml
+
+kubectl get ingress
+kubectl get pods --all-namespaces
+
+** service urls **
+http://localhost/users-service/
+http://localhost/users-service/users
+http://localhost/number-service/
+http://localhost/number-service/random
+##################
+
+** get all history from powershell cmd **
+
+(Get-PSReadlineOption).HistorySavePath
+C:\Users\Dave\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
