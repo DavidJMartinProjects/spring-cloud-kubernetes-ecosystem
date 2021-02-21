@@ -18,3 +18,7 @@ spec:
             backend:
               serviceName: number-service-svc
               servicePort: 9091
+          - path: /gamification-service
+            backend:
+              serviceName: gamification-service-svc
+              servicePort: 9093

@@ -10,3 +10,4 @@ deploy:
     - k8-nginx-ingress/ingress.yaml
     - number-service/k8/*
     - user-service/k8/*
+    - gamification-service/k8/*
