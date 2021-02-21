@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+metadata:
+  name: ecosystem
+deploy:
+  kubectl:
+    manifests:
+    - k8-nginx-ingress/nginx.deployment.yaml
+    - k8-nginx-ingress/cloud-generic.yaml
+    - k8-nginx-ingress/ingress.yaml
+    - number-service/k8/*
+    - user-service/k8/*
