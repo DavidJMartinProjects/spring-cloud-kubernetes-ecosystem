@@ -25,6 +25,7 @@
         <module>user-service</module>
         <module>service-discovery</module>
         <module>api-gateway</module>
+        <module>gamification-service</module>
     </modules>
 
     <dependencyManagement>
