@@ -42,7 +42,7 @@ public class UserControllerTests {
         // given
         String url = UserController.BASE_PATH + UserController.USERS_URL;
 
-        // when 
+        // when
         ResultActions response = mockMvc.perform(get(url));
 
         // then

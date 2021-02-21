@@ -1,5 +1,6 @@
 package com.ecosystem.numberservice.controller;
 
+import com.ecosystem.numberservice.service.NumberService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ public class NumberServiceControllerTests {
         // then
         response
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$", lessThan(NumberServiceController.UPPER_BOUNDARY)));
+            .andExpect(jsonPath("$", lessThan(NumberService.UPPER_BOUNDARY)));
     }
 
 }
