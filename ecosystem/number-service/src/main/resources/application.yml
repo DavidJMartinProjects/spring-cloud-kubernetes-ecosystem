@@ -1,9 +1,9 @@
 server:
-  port: 9093
+  port: 9091
 
 spring:
   application:
-    name: gamification-service
+    name: number-service
 
 eureka:
   client:

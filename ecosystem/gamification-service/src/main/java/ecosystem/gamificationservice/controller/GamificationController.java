@@ -1,14 +1,13 @@
 package ecosystem.gamificationservice.controller;
 
-import ecosystem.gamificationservice.domain.pojo.AttemptRequest;
-import ecosystem.gamificationservice.domain.pojo.AttemptResponse;
+import ecosystem.gamificationservice.domain.pojo.request.AttemptRequest;
+import ecosystem.gamificationservice.domain.pojo.response.AttemptResponse;
+import ecosystem.gamificationservice.domain.pojo.response.RandomNumberResponse;
 import ecosystem.gamificationservice.service.GamificationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import javax.persistence.GeneratedValue;
 
 @Slf4j
 @RestController
@@ -30,20 +29,20 @@ public class GamificationController {
         return "success. gamification service is online.";
     }
 
-    @ResponseBody
-    @PostMapping(RESULT_URL)
-    @ResponseStatus(HttpStatus.CREATED)
-    public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) {
-        log.info("received GET request to {}.", BASE_PATH + RESULT_URL);
-        return gamificationService.accessAttempt(attemptRequest);
-    }
+//    @ResponseBody
+//    @PostMapping(RESULT_URL)
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) {
+//        log.info("received GET request to {}.", BASE_PATH + RESULT_URL);
+//        return gamificationService.getRandomNumber();
+//    }
 
     @ResponseBody
     @GetMapping(TEST_URL)
     @ResponseStatus(HttpStatus.OK)
-    public int getResult() {
+    public RandomNumberResponse getResult() {
         log.info("received GET request to {}.", BASE_PATH + TEST_URL);
-        return gamificationService.getNumber();
+        return gamificationService.getRandomNumber();
     }
 
 }

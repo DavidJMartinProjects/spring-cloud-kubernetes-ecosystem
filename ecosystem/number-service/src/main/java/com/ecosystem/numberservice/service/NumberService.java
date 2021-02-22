@@ -1,5 +1,6 @@
 package com.ecosystem.numberservice.service;
 
+import com.ecosystem.numberservice.domain.pojo.RandomNumber;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
@@ -9,8 +10,10 @@ public class NumberService {
 
     public static final int UPPER_BOUNDARY = 100;
 
-    public int getRandomNumber() {
-        return new Random().nextInt(UPPER_BOUNDARY);
+    public RandomNumber getRandomNumber() {
+        return RandomNumber.builder()
+            .number(new Random().nextInt(UPPER_BOUNDARY))
+            .build();
     }
 
 }

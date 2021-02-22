@@ -1,4 +1,4 @@
-package ecosystem.gamificationservice.domain.pojo;
+package ecosystem.gamificationservice.domain.pojo.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

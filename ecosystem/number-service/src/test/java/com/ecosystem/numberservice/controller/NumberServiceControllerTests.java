@@ -50,7 +50,7 @@ public class NumberServiceControllerTests {
         // then
         response
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$", lessThan(NumberService.UPPER_BOUNDARY)));
+            .andExpect(jsonPath("$.number", lessThan(NumberService.UPPER_BOUNDARY)));
     }
 
 }

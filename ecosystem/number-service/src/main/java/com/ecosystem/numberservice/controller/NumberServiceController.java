@@ -1,5 +1,6 @@
 package com.ecosystem.numberservice.controller;
 
+import com.ecosystem.numberservice.domain.pojo.RandomNumber;
 import com.ecosystem.numberservice.service.NumberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class NumberServiceController {
     @GetMapping(RANDOM_NUMBER_URL)
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    public int getRandomNumber() {
+    public RandomNumber getRandomNumber() {
         log.info("received GET request to {}.", BASE_PATH + RANDOM_NUMBER_URL);
         return numberService.getRandomNumber();
     }
