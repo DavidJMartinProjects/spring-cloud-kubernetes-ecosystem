@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 
 @Slf4j
@@ -23,19 +22,9 @@ public class GamificationController {
     @Autowired
     private GamificationService gamificationService;
 
-    @Autowired
-    RestTemplate restTemplate;
-
-    @PostMapping(SUBMIT_URL)
-    @ResponseStatus(HttpStatus.CREATED)
-    public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) {
-        log.info("received GET request to {}.", BASE_PATH + SUBMIT_URL);
-        return new AttemptResponse();
-    }
-
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public String getGreeting() {
+    public String getStatus() {
         log.info("received GET request to {}.", BASE_PATH);
         return "success. gamification service is online.";
     }
@@ -45,6 +34,13 @@ public class GamificationController {
     public ResponseEntity<String> pingNumberService() {
         log.info("received GET request to {}.", BASE_PATH + PING_URL);
         return gamificationService.pingNumberService();
+    }
+
+    @PostMapping(SUBMIT_URL)
+    @ResponseStatus(HttpStatus.CREATED)
+    public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) {
+        log.info("received GET request to {}.", BASE_PATH + SUBMIT_URL);
+        return new AttemptResponse();
     }
 
 }

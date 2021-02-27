@@ -8,7 +8,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class AttemptRequest {
     private int currentNumber;
-    private int nextNumber;
     private int attemptCount;
-    private HiLo hiLo;
+    private HiLo attemptAnswer;
 }
