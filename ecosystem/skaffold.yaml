@@ -8,6 +8,3 @@ deploy:
     - k8-nginx-ingress/nginx.deployment.yaml
     - k8-nginx-ingress/cloud-generic.yaml
     - k8-nginx-ingress/ingress.yaml
-    - number-service/k8/*
-    - user-service/k8/*
-    - gamification-service/k8/*

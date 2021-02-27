@@ -10,4 +10,4 @@ build:
 deploy:
   kubectl:
     manifests:
-      - /kubernetes-manifests/*.yaml
+      - /k8/*.yaml

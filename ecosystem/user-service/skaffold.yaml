@@ -11,3 +11,4 @@ deploy:
   kubectl:
     manifests:
       - /k8/*.yaml
+

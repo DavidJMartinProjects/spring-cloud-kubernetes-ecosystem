@@ -12,13 +12,13 @@ spec:
         paths:
           - path: /users-service
             backend:
-              serviceName: user-service-svc
+              serviceName: user-service
               servicePort: 9092
           - path: /number-service
             backend:
-              serviceName: number-service-svc
+              serviceName: number-service
               servicePort: 9091
           - path: /gamification-service
             backend:
-              serviceName: gamification-service-svc
+              serviceName: gamification-service
               servicePort: 9093
