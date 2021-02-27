@@ -53,7 +53,7 @@ public class GamificationService {
 
     private boolean getAttemptResult(Attempt attempt) {
         HiLo actualAnswer = getActualAnswer(attempt.getAttemptRequest(), attempt.getNextNumber());
-        HiLo userAnswer = attempt.getAttemptRequest().getAttemptAnswer();
+        HiLo userAnswer = HiLo.valueOf(attempt.getAttemptRequest().getAttemptAnswer());
         return userAnswer.equals(actualAnswer);
     }
 
