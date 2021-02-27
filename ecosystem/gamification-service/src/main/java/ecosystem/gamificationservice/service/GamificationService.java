@@ -44,8 +44,8 @@ public class GamificationService {
 
     private boolean determineAttemptResult(Attempt attempt) {
         HiLo actualAnswer =
-            attempt.getAttemptRequest().getCurrentNumber() > attempt.getNextNumber() ? HiLo.HIGER : HiLo.LOWER;
-        HiLo userAnswer = HiLo.valueOf(attempt.getAttemptRequest().getAttemptAnswer());
+            attempt.getAttemptRequest().getCurrentNumber() > attempt.getNextNumber() ? HiLo.LOWER : HiLo.HIGHER;
+        HiLo userAnswer = HiLo.valueOf(attempt.getAttemptRequest().getAttemptAnswer().toUpperCase());
         return userAnswer.equals(actualAnswer);
     }
 

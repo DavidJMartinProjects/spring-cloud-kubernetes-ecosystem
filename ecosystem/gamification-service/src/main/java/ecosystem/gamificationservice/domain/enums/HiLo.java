@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public enum HiLo {
-    HIGER("higher"),
+    HIGHER("higher"),
     LOWER("lower");
 
     @Getter

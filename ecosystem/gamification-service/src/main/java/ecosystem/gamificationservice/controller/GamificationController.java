@@ -40,7 +40,7 @@ public class GamificationController {
     @PostMapping(SUBMIT_URL)
     @ResponseStatus(HttpStatus.CREATED)
     public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) throws JsonProcessingException {
-        log.info("received GET request to {}.", BASE_PATH + SUBMIT_URL);
+        log.info("received POST request to {} with request body: {}", BASE_PATH + SUBMIT_URL, attemptRequest);
         return gamificationService.assessAttemptRequest(attemptRequest);
     }
 
