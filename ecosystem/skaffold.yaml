@@ -5,6 +5,6 @@ metadata:
 deploy:
   kubectl:
     manifests:
-    - k8-nginx-ingress/nginx.deployment.yaml
-    - k8-nginx-ingress/cloud-generic.yaml
-    - k8-nginx-ingress/ingress.yaml
+    - nginx-ingress/nginx.deployment.yaml
+    - nginx-ingress/cloud-generic.yaml
+    - nginx-ingress/ingress.yaml

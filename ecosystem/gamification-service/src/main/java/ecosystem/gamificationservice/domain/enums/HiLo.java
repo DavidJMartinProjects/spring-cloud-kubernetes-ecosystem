@@ -1,12 +1,12 @@
-package ecosystem.gamificationservice.domain.pojo.enums;
+package ecosystem.gamificationservice.domain.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 public enum HiLo {
-    HI("HIGHER"),
-    LOW("LOWER");
+    HIGER("higher"),
+    LOWER("lower");
 
     @Getter
     private String value;

@@ -1,5 +1,6 @@
 package ecosystem.gamificationservice.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import ecosystem.gamificationservice.domain.pojo.request.AttemptRequest;
 import ecosystem.gamificationservice.domain.pojo.response.AttemptResponse;
 import ecosystem.gamificationservice.service.GamificationService;
@@ -38,9 +39,9 @@ public class GamificationController {
 
     @PostMapping(SUBMIT_URL)
     @ResponseStatus(HttpStatus.CREATED)
-    public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) {
+    public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) throws JsonProcessingException {
         log.info("received GET request to {}.", BASE_PATH + SUBMIT_URL);
-        return new AttemptResponse();
+        return gamificationService.assessAttemptRequest(attemptRequest);
     }
 
 }

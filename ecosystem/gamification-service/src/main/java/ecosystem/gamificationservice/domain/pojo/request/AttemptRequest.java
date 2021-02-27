@@ -1,6 +1,6 @@
 package ecosystem.gamificationservice.domain.pojo.request;
 
-import ecosystem.gamificationservice.domain.pojo.enums.HiLo;
+import ecosystem.gamificationservice.domain.enums.HiLo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
