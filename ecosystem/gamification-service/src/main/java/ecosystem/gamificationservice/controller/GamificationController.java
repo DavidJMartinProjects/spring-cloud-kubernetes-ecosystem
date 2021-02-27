@@ -2,12 +2,10 @@ package ecosystem.gamificationservice.controller;
 
 import ecosystem.gamificationservice.domain.pojo.request.AttemptRequest;
 import ecosystem.gamificationservice.domain.pojo.response.AttemptResponse;
-import ecosystem.gamificationservice.domain.pojo.response.RandomNumberResponse;
 import ecosystem.gamificationservice.service.GamificationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -32,7 +30,6 @@ public class GamificationController {
     @ResponseStatus(HttpStatus.CREATED)
     public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) {
         log.info("received GET request to {}.", BASE_PATH + SUBMIT_URL);
-//        return gamificationService.getRandomNumber();
         return new AttemptResponse();
     }
 
@@ -45,12 +42,9 @@ public class GamificationController {
 
     @GetMapping(PING_URL)
     @ResponseStatus(HttpStatus.OK)
-    public RandomNumberResponse pingNumberService() {
+    public ResponseEntity<String> pingNumberService() {
         log.info("received GET request to {}.", BASE_PATH + PING_URL);
-        String url = "http://number-service:9091/number-service/random";
-        ResponseEntity<RandomNumberResponse> responseEntity = restTemplate.getForEntity(url, RandomNumberResponse.class);
-        log.info("success: Response from number-service via Discovery Client.... " + responseEntity.getBody());
-        return responseEntity.getBody();
+        return gamificationService.pingNumberService();
     }
 
 }
