@@ -5,3 +5,5 @@ spring:
   application:
     name: gamification-service
 
+  zipkin:
+    enabled: false
