@@ -18,7 +18,6 @@ public class GamificationController {
 
     public static final String BASE_PATH = "/gamification-service";
     public static final String SUBMIT_URL = "/submit";
-    public static final String PING_URL = "/ping";
 
     @Autowired
     private GamificationService gamificationService;
@@ -28,13 +27,6 @@ public class GamificationController {
     public String getStatus() {
         log.info("received GET request to {}.", BASE_PATH);
         return "success. gamification service is online.";
-    }
-
-    @GetMapping(PING_URL)
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> pingNumberService() {
-        log.info("received GET request to {}.", BASE_PATH + PING_URL);
-        return gamificationService.pingNumberService();
     }
 
     @PostMapping(SUBMIT_URL)
