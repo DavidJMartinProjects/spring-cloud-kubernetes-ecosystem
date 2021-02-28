@@ -32,7 +32,6 @@ public class GamificationService {
         return buildAttemptResponse(attempt);
     }
 
-
     private AttemptResponse buildAttemptResponse(Attempt attempt) {
         return AttemptResponse.builder()
             .nextNumber(attempt.getNextNumber())
