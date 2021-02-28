@@ -6,4 +6,9 @@ spring:
     name: user-service
 
   zipkin:
-    enabled: false
+    enabled: true
+    base-url: http://my-zipkin-collector:9411/
+
+  sleuth:
+    sampler:
+      percentage: 1.0
