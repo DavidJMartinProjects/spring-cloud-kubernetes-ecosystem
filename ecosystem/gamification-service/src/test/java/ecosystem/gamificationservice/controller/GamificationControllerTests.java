@@ -2,7 +2,6 @@ package ecosystem.gamificationservice.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ecosystem.gamificationservice.controller.GamificationController;
 import ecosystem.gamificationservice.domain.pojo.request.AttemptRequest;
 import ecosystem.gamificationservice.rest.RestTemplateFacade;
 import ecosystem.gamificationservice.service.GamificationService;
@@ -53,7 +52,6 @@ public class GamificationControllerTests {
         //given
         String attemptRequest = buildAttemptRequest(50, "higher");
 
-
         //when
         when(restTemplateFacade.getForEntity(any())).thenReturn(buildNumberServiceResponseEntity(NEXT_NUMBER));
 
@@ -71,10 +69,10 @@ public class GamificationControllerTests {
 
     private String buildAttemptRequest(int currentNumber, String attemptAnswer) throws JsonProcessingException {
         AttemptRequest attemptRequest = AttemptRequest.builder()
-                .attemptCount(1)
-                .currentNumber(currentNumber)
-                .attemptAnswer(attemptAnswer)
-                .build();
+            .attemptCount(1)
+            .currentNumber(currentNumber)
+            .attemptAnswer(attemptAnswer)
+            .build();
 
         return new ObjectMapper().writeValueAsString(attemptRequest);
     }
