@@ -41,7 +41,6 @@ public class GamificationService {
             .build();
     }
 
-
     private int getNextNumber() throws JsonProcessingException {
         String randomNumberResponse = restTemplateFacade.getForEntity(NUMBER_SERVICE_URL).getBody();
         try {
@@ -63,7 +62,7 @@ public class GamificationService {
     private HiLo getActualAnswer(Attempt attempt) {
         return attempt.getAttemptRequest().getCurrentNumber() > attempt.getNextNumber() ? HiLo.LOWER : HiLo.HIGHER;
     }
-    
+
     public ResponseEntity<String> pingNumberService() {
         return restTemplateFacade.getForEntity(NUMBER_SERVICE_URL);
     }
