@@ -9,7 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LeaderboardEntry {
+public class LeaderboardDto {
+    private long id;
     private String name;
-    private String rank;
+    private String country;
+    private int score;
+    private int rank;
 }

@@ -1,6 +1,6 @@
 package ecosystem.leaderboardservice.controller;
 
-import ecosystem.leaderboardservice.domain.pojo.LeaderboardEntry;
+import ecosystem.leaderboardservice.domain.pojo.LeaderboardDto;
 import ecosystem.leaderboardservice.service.LeaderboardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class LeaderboardController {
     @GetMapping(LEADERBOARD_URI)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<LeaderboardEntry> getLeaderboard() {
+    public List<LeaderboardDto> getLeaderboard() {
         log.info("received GET request to {} ", BASE_PATH + LEADERBOARD_URI);
         return leaderboardService.getLeaderboard();
     }

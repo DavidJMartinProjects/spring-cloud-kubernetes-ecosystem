@@ -1,21 +1,20 @@
 package ecosystem.leaderboardservice.service;
 
-import ecosystem.leaderboardservice.domain.pojo.LeaderboardEntry;
+import ecosystem.leaderboardservice.db.dao.LeaderboardDao;
+import ecosystem.leaderboardservice.domain.pojo.LeaderboardDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
 public class LeaderboardService {
 
-    public List<LeaderboardEntry> getLeaderboard() {
-        return Collections.singletonList(
-            new LeaderboardEntry().builder()
-                .name("dummy-name")
-                .rank("dummy-rank")
-                .build()
-        );
+    @Autowired
+    private LeaderboardDao leaderboardDao;
+
+    public List<LeaderboardDto> getLeaderboard() {
+        return leaderboardDao.findAll();
     }
 
 }
