@@ -1,0 +1,14 @@
+server:
+  port: 9094
+
+spring:
+  application:
+    name: leaderboard-service
+
+  zipkin:
+    enabled: true
+    base-url: http://my-zipkin-collector:9411/
+
+  sleuth:
+    sampler:
+      percentage: 1.0
