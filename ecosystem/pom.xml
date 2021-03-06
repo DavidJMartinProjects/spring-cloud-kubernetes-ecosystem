@@ -17,7 +17,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>user-service</module>
         <module>number-service</module>
         <module>gamification-service</module>
         <module>leaderboard-service</module>
