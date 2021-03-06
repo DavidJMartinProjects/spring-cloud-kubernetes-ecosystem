@@ -22,3 +22,7 @@ spec:
             backend:
               serviceName: gamification-service
               servicePort: 9093
+          - path: /leaderboard-service
+            backend:
+              serviceName: leaderboard-service
+              servicePort: 9094

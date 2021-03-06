@@ -7,9 +7,7 @@ import ecosystem.gamificationservice.service.GamificationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 
 @Slf4j
 @RestController
@@ -32,7 +30,7 @@ public class GamificationController {
     @PostMapping(SUBMIT_URL)
     @ResponseStatus(HttpStatus.CREATED)
     public AttemptResponse getResult(@RequestBody AttemptRequest attemptRequest) throws JsonProcessingException {
-        log.info("received POST request to {} with request body: {}", BASE_PATH + SUBMIT_URL, attemptRequest);
+        log.info("received POST request to {} attempt request: {}", BASE_PATH + SUBMIT_URL, attemptRequest);
         return gamificationService.assessAttemptRequest(attemptRequest);
     }
 
