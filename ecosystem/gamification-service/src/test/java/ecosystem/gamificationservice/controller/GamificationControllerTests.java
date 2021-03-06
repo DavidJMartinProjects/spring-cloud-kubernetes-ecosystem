@@ -2,44 +2,60 @@ package ecosystem.gamificationservice.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ecosystem.gamificationservice.GamificationServiceApplicationTests;
 import ecosystem.gamificationservice.domain.pojo.request.AttemptRequest;
-import ecosystem.gamificationservice.rest.RestTemplateFacade;
+import ecosystem.gamificationservice.service.facade.RestTemplateFacade;
+import ecosystem.gamificationservice.kafka.event.CheckFinalScoreEvent;
 import ecosystem.gamificationservice.service.GamificationService;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.Consumer;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.common.serialization.StringDeserializer;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.kafka.core.ConsumerFactory;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.support.serializer.JsonDeserializer;
+import org.springframework.kafka.test.EmbeddedKafkaBroker;
+import org.springframework.kafka.test.context.EmbeddedKafka;
+import org.springframework.kafka.test.utils.KafkaTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Map;
+
+import static ecosystem.gamificationservice.kafka.config.KafkaTopicConfig.LEADERBOARD_TOPIC;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@Slf4j
 @AutoConfigureMockMvc
-public class GamificationControllerTests {
+@EmbeddedKafka(controlledShutdown = true, topics = LEADERBOARD_TOPIC)
+public class GamificationControllerTests extends GamificationServiceApplicationTests {
 
-    public static final int NEXT_NUMBER = 55;
+    public static final int NEXT_NUMBER = 45;
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    RestTemplateFacade restTemplateFacade;
+    private RestTemplateFacade restTemplateFacade;
 
     @InjectMocks
-    GamificationService gamificationService;
+    private GamificationService gamificationService;
+
+    @Autowired
+    private EmbeddedKafkaBroker embeddedKafkaBroker;
 
     @Before
     public void setUp() {
@@ -48,23 +64,43 @@ public class GamificationControllerTests {
 
     @Test
     public void given_validAttemptRequest_when_postRequestOnSubmit_then_expectedResponseReturned() throws Exception {
+        Consumer<String, CheckFinalScoreEvent> consumerServiceTest = setupKafkaConsumerListener();
 
-        //given
+        // given
         String attemptRequest = buildAttemptRequest(50, "higher");
 
-        //when
+        // when
         when(restTemplateFacade.getForEntity(any())).thenReturn(buildNumberServiceResponseEntity(NEXT_NUMBER));
 
-        //then
+        // then verify api response
         mockMvc.perform(post(GamificationController.BASE_PATH + GamificationController.SUBMIT_URL)
             .contentType(MediaType.APPLICATION_JSON)
             .content(attemptRequest))
             .andExpect(status().isCreated())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.nextNumber").value(NEXT_NUMBER))
-            .andExpect(jsonPath("$.previousAttemptCorrect").value(true))
+            .andExpect(jsonPath("$.previousAttemptCorrect").value(false))
             .andReturn();
 
+        // then verify kafka producer event is sent
+        embeddedKafkaBroker.consumeFromAnEmbeddedTopic(consumerServiceTest, LEADERBOARD_TOPIC);
+        ConsumerRecord<String, CheckFinalScoreEvent> consumerRecordOfExampleDTO =
+            KafkaTestUtils.getSingleRecord(consumerServiceTest, LEADERBOARD_TOPIC);
+        CheckFinalScoreEvent valueReceived = consumerRecordOfExampleDTO.value();
+        consumerServiceTest.close();
+
+        log.info("valueReceived: " + valueReceived.toString());
+    }
+
+    private Consumer<String, CheckFinalScoreEvent> setupKafkaConsumerListener() {
+        // setup kafka consumer listener
+        Map<String, Object> consumerProps =
+            KafkaTestUtils.consumerProps("group_consumer_test", "false", embeddedKafkaBroker);
+        consumerProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        ConsumerFactory<String, CheckFinalScoreEvent> cf =
+            new DefaultKafkaConsumerFactory<>(consumerProps, new StringDeserializer(),
+                new JsonDeserializer<>(CheckFinalScoreEvent.class, false));
+        return cf.createConsumer();
     }
 
     private String buildAttemptRequest(int currentNumber, String attemptAnswer) throws JsonProcessingException {

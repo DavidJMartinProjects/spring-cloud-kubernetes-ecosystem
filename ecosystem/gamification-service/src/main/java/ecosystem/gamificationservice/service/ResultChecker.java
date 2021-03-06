@@ -8,15 +8,9 @@ import org.springframework.stereotype.Component;
 public class ResultChecker {
 
     public boolean checkResult(Attempt attempt) {
-        return getUserAnswer(attempt).equals(getActualAnswer(attempt));
-    }
-
-    private HiLo getUserAnswer(Attempt attempt) {
-        return HiLo.valueOf(attempt.getAttemptRequest().getAttemptAnswer().toUpperCase());
-    }
-
-    private HiLo getActualAnswer(Attempt attempt) {
-        return attempt.getAttemptRequest().getCurrentNumber() > attempt.getNextNumber() ? HiLo.LOWER : HiLo.HIGHER;
+        HiLo userAnswer = HiLo.valueOf(attempt.getAttemptRequest().getAttemptAnswer().toUpperCase());
+        HiLo actualAnswer = attempt.getAttemptRequest().getCurrentNumber() > attempt.getNextNumber() ? HiLo.LOWER : HiLo.HIGHER;
+        return userAnswer.equals(actualAnswer);
     }
 
 }

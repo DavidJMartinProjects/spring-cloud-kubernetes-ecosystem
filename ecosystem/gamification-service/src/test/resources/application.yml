@@ -1,0 +1,15 @@
+test:
+  topic: leaderboard
+
+spring:
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
+
+kafkaconfig:
+  topic: test_one
+  groupId: test_one_gp
+  partitionCount: 1
+  retries: 3
+  autoCommitEnabled: false
