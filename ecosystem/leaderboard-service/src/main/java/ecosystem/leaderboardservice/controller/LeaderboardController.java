@@ -24,7 +24,7 @@ public class LeaderboardController {
     @ResponseStatus(HttpStatus.OK)
     public String getStatus() {
         log.info("received GET request to {} ", BASE_PATH);
-        return "success.  leaderboard-service is online.";
+        return "success. leaderboard-service is online.";
     }
 
     @GetMapping(LEADERBOARD_URI)
