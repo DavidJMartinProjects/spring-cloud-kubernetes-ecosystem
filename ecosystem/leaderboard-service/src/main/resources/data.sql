@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS leaderboard;
+DROP TABLE IF EXISTS rankings;
 
-CREATE TABLE leaderboard (
+CREATE TABLE rankings (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   name VARCHAR(250) NOT NULL,
   country VARCHAR(250) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE leaderboard (
   rank INTEGER DEFAULT NULL
 );
 
-INSERT INTO leaderboard (name, country, score, rank) VALUES
+INSERT INTO rankings (name, country, score, rank) VALUES
   ('Dave', 'Ireland', 10, 1),
   ('Bill', 'U.S.A', 8, 5),
   ('Folrunsho', 'U.K', 3, 6);

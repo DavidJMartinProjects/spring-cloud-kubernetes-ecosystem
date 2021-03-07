@@ -1,13 +1,19 @@
 package ecosystem.leaderboardservice.db.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
 @Data
-@Table(name = "leaderboard")
-public class LeaderboardEntity {
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "rankings")
+public class RankingEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
