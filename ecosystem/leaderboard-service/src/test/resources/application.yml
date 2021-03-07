@@ -1,9 +1,9 @@
 server:
-  port: 9093
+  port: 9094
 
 spring:
   application:
-    name: gamification-service
+    name: leaderboard-service
 
   zipkin:
     enabled: true
@@ -14,24 +14,16 @@ spring:
       percentage: 1.0
 
   kafka:
-      bootstrap-servers: my-cluster-kafka-bootstrap:9092
-
-kafkaconfig:
-  topic: leaderboard
-  groupId: ecosystem
-  partitionCount: 1
-  retries: 3
-  autoCommitEnabled: false
-
-  kafka:
+    groupId: ecosystem
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
     consumer:
-      bootstrap-servers: my-cluster-kafka-bootstrap:9092
-      group-id: group_id
+      bootstrap-servers: ${spring.embedded.kafka.brokers}
+      group-id: ecosystem
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
-      bootstrap-servers: my-cluster-kafka-bootstrap:9092
+      bootstrap-servers: ${spring.embedded.kafka.brokers}
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 

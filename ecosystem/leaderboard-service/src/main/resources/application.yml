@@ -15,6 +15,15 @@ spring:
 
   kafka:
     groupId: ecosystem
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: my-cluster-kafka-bootstrap:9092
     consumer:
+      bootstrap-servers: my-cluster-kafka-bootstrap:9092
       group-id: ecosystem
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: my-cluster-kafka-bootstrap:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+

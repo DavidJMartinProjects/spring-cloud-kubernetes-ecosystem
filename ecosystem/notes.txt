@@ -26,3 +26,10 @@ export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/nam
   export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/name=zipkin,app.kubernetes.io/instance=my-zipkin,app.kubernetes.io/component=collector" -o jsonpath="{.items[0].metadata.name}")
   echo "Visit http://127.0.0.1:8080 to use your application"
   kubectl --namespace default port-forward $POD_NAME 8080:9411
+
+**************************
+install kafka
+kubectl apply -f 'https://strimzi.io/install/latest?namespace=default' -n default
+kubectl apply -f https://strimzi.io/examples/latest/kafka/kafka-persistent-single.yaml -n default
+
+https://strimzi.io/quickstarts/
