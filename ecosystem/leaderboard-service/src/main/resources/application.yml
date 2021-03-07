@@ -12,3 +12,9 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
+
+  kafka:
+    groupId: ecosystem
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: ecosystem

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import ecosystem.gamificationservice.domain.pojo.Attempt;
 import ecosystem.gamificationservice.domain.pojo.request.AttemptRequest;
 import ecosystem.gamificationservice.domain.pojo.response.AttemptResponse;
-import ecosystem.gamificationservice.kafka.KafkaFacade;
+import ecosystem.gamificationservice.kafka.KafkaTemplateFacade;
 import ecosystem.gamificationservice.kafka.event.CheckFinalScoreEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class GamificationService {
     private ResultChecker resultChecker;
 
     @Autowired
-    KafkaFacade kafkaFacade;
+    KafkaTemplateFacade kafkaTemplateFacade;
 
     public AttemptResponse assessAttemptRequest(AttemptRequest attemptRequest) throws JsonProcessingException {
         Attempt attempt =
@@ -55,7 +55,7 @@ public class GamificationService {
                 .country("test-country")
                 .score(attempt.getNextNumber())
                 .build();
-        kafkaFacade.sendMessage(LEADERBOARD_TOPIC, finalScoreEvent);
+        kafkaTemplateFacade.sendMessage(LEADERBOARD_TOPIC, finalScoreEvent);
     }
 
 }
