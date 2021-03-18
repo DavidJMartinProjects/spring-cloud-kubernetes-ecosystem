@@ -1,0 +1,23 @@
+.image{
+    background-size:cover; width:auto;
+    /* background-color: black; */
+    background-image:url('../assets/background/19449741.jpg');
+    width:100%;
+    margin: 0;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .nav-item{
+    padding:2px;
+    margin-left: 7px;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    justify-content: space-around;
+    flex-basis: auto;
+    }

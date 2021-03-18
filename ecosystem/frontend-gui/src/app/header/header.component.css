@@ -1,0 +1,10 @@
+.nav-item{
+    padding:2px;
+    margin-left: 7px;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    justify-content: space-around;
+    flex-basis: auto;
+    }
