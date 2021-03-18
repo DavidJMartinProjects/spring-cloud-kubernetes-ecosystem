@@ -11,7 +11,7 @@
             <div class="pricing-header px-3 py-3 pt-md-1 mx-auto text-center">
               <h1 class="display-4">Hi-Lo</h1>
               <div class="row mt-4"></div>
-              <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>              
+              <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>
               <button class="btn btn-info" (click)="open(mymodal)">Register to Play</button>
             </div>
           </div>
@@ -23,112 +23,86 @@
         </div>
         <div class="card-body">
           <div class="container">
-          <table class="table table-sm row-border hover table-striped" datatable [dtOptions]="dtOptions">
-            <thead>
-            <tr>
-              <th scope="col">Rank</th>
-              <th scope="col">Name</th>
-              <th scope="col">Country</th>
-              <th scope="col">Score</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>8</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>3</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+            <table class="table table-sm row-border hover table-striped" datatable [dtOptions]="dtOptions">
+              <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Country</th>
+                <th scope="col">Score</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>3</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-
+<!-- modal template -->
 <ng-template #mymodal let-modal>
-  
-  <!-- <div class="modal-header bg-info"> -->
-    <!-- <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4> -->
-    <!-- <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"> -->
-      <!-- <span aria-hidden="true">×</span> -->
-    <!-- </button> -->
-  <!-- </div> -->
-
-  <!-- <div class="modal-body">
-    <div class="card-deck mb-3 text-center">
-      <div class="card-body">
-        <div class="row mt-4"></div>
-        <div class="pricing-header px-3 py-3 pt-md-1 mx-auto text-center">
-          <h1 class="display-4">Hi-Lo</h1>
-          <div class="row mt-4"></div>
-          <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>              
-          <button class="btn btn-info" (click)="open(mymodal)">Register to Play</button>
+  <div class="modal-dialog modal-login">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="avatar">
+          <img src="../../assets/avatar.png" alt="Avatar">
         </div>
+        <h4 class="modal-title">Choose a Nickname</h4>
       </div>
-    
-    </div>
-  </div> -->
-
-  <!-- <div class="modal-footer bg-info">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
-  </div> -->
-
-  <!-- Modal HTML -->
-
-	<div class="modal-dialog modal-login">
-		<div class="modal-content">
-			<div class="modal-header">
-				<div class="avatar">
-					<img src="../../assets/avatar.png" alt="Avatar">
-				</div>				
-				<h4 class="modal-title">Choose a Nickname</h4>	        
-			</div>
-			<div class="modal-body">
-				<form action="/examples/actions/confirmation.php" method="post">
+      <div class="modal-body">
+        <form action="/examples/actions/confirmation.php" method="post">
           <div class="form-group">
             <div class="row">
-              <div class="col"><input type="text" class="form-control" name="nickname" placeholder="Nickname" required="required"></div>
-              <div class="col"><button class="btn btn-info btn-outline-info" type="button">random</button></div>
-            </div>        	
+              <div class="col"><input type="text" class="form-control" name="nickname" placeholder="Nickname"
+                                      required="required"></div>
+              <div class="col">
+                <button class="btn btn-info btn-outline-info" type="button">random</button>
               </div>
-					<div class="form-group">
-						<input type="text" class="form-control" name="country" placeholder="Country" required="required">	
-					</div>        
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn btn-info">Play Now!</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="country" placeholder="Country" required="required">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-btn btn-info">Play Now!</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </ng-template>
 
 
