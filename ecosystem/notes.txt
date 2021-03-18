@@ -31,6 +31,9 @@ yarn add @angular-devkit/build-angular --dev
 ng add angular-datatables
 yarn add angular-datatables@11.1.1
 
+Modals
+https://www.itsolutionstuff.com/post/how-to-use-bootstrap-modal-in-angularexample.html
+
 ****************************
 
 LOGO MAKER

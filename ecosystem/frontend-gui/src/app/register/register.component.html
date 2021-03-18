@@ -11,8 +11,8 @@
             <div class="pricing-header px-3 py-3 pt-md-1 mx-auto text-center">
               <h1 class="display-4">Hi-Lo</h1>
               <div class="row mt-4"></div>
-              <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>
-              <a class="btn btn-info" href="#">Register to Play</a>
+              <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>              
+              <button class="btn btn-info" (click)="open(mymodal)">Register to Play</button>
             </div>
           </div>
         </div>
@@ -71,6 +71,35 @@
     </div>
   </div>
 </div>
+
+
+<ng-template #mymodal let-modal>
+  
+  <!-- <div class="modal-header bg-info"> -->
+    <!-- <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4> -->
+    <!-- <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"> -->
+      <!-- <span aria-hidden="true">×</span> -->
+    <!-- </button> -->
+  <!-- </div> -->
+  <div class="modal-body">
+    <div class="card-deck mb-3 text-center">
+      <div class="card-body">
+        <div class="row mt-4"></div>
+        <div class="pricing-header px-3 py-3 pt-md-1 mx-auto text-center">
+          <h1 class="display-4">Hi-Lo</h1>
+          <div class="row mt-4"></div>
+          <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>              
+          <button class="btn btn-info" (click)="open(mymodal)">Register to Play</button>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  <!-- <div class="modal-footer bg-info">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div> -->
+
+</ng-template>
 
 
 

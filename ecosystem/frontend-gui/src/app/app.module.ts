@@ -9,6 +9,7 @@ import { PlayComponent } from './play/play.component';
 import { RegisterComponent } from './register/register.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { DataTablesModule } from "angular-datatables";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DataTablesModule } from "angular-datatables";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DataTablesModule
+    DataTablesModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
