@@ -1,10 +1,15 @@
 .nav-item{
     padding:2px;
     margin-left: 7px;
-  }
+}
 
-  .navbar-expand-lg .navbar-collapse {
+.navbar-expand-lg .navbar-collapse {
     display: flex!important;
     justify-content: space-around;
     flex-basis: auto;
-    }
+}
+
+/* .navbar {
+   background-color: #e3f2fd;
+}
+   */

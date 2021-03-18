@@ -1,144 +1,76 @@
-
 <div class="container">
-
-    <!-- <div class="container">
-  
-      <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow border border-info">
-          <div class="card-body">
-            <div class="pricing-header px-3 py-3 pt-md-4 pb-md-4 mx-auto text-center">
-              <h1 class="display-4">Hi-Lo</h1>
-              <div class="row mt-4"></div>
-              <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>
-              <a class="btn btn-info" href="#">Register now to play!</a>
-              <div class="row mt-3"></div>
-            </div>        
-          </div>
+  <div class="row justify-content-center">
+    <div class="card-deck text-center">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header bg-info text-white">
+          <h4 class="my-0 font-weight-normal">Take the Challenge</h4>
         </div>
-      </div>
-    </div> -->
-
-    
-<div class="container">
-  
-    <div class="container">
-      <div class="card-deck mb-3 text-center">
-  
-        <div class="card mb-4 box-shadow">
-          <div class="card-header bg-info text-white">
-            <h4 class="my-0 font-weight-normal">Take the Challenge</h4>
-          </div>
-  
-  
-
-            
-      <div class="card-deck mb-3 text-center">
-        
+        <div class="card-deck mb-3 text-center">
           <div class="card-body">
+            <div class="row mt-4"></div>
             <div class="pricing-header px-3 py-3 pt-md-1 mx-auto text-center">
               <h1 class="display-4">Hi-Lo</h1>
               <div class="row mt-4"></div>
               <p class="lead">Are you ready to accept the Hi-Lo challenge and make the leaderboard?</p>
               <a class="btn btn-info" href="#">Register to Play</a>
-              
-            </div>       
-        
-        </div>
-  
-        </div>
-
-  
-  </div>
-  
-  
-  
-    <!-- <div class="container">
-      <div class="card-deck mb-3 text-center">
-  
-        <div class="card mb-4 box-shadow">
-          <div class="card-header bg-info text-white">
-            <h4 class="my-0 font-weight-normal">Take the Challenge!</h4>
-          </div>
-  
-          <div class="card-body">
-  
-            <ul class="list-unstyled mt-3 mb-4">
-              <li><p>Will the next number will be Higher or Lower?</p></li>
-              <li></li>
-              <li><h1 class="display-1">80</h1></li>
-              <div class="row mt-3"></div>
-              <li>
-                <div class="row justify-content-center">
-                  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                      <a href="#" class="btn btn-info" id="btnHigher">Higher</a>
-                    </div>
-                    <div class="btn-group mr-2" role="group" aria-label="Second group">
-                      <a href="#" class="btn btn-secondary" id="btnLower">Lower</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <div class="row mt-3"></div>
-              <div class="row mt-3"></div>
-              <li>7 of 10 attempts remaining.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="card mb-4 box-shadow ">
-          <div class="card-header bg-info text-white">
-            <h4 class="my-0 font-weight-normal">Leaderboard</h4>
-          </div>
-          <div class="card-body">
-  
-            <table class="table table-striped">
-              <thead>
-              <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Name</th>
-                <th scope="col">Country</th>
-                <th scope="col">Score</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>6</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>3</td>
-              </tr>
-              </tbody>
-            </table>
-  
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
-  
+      <div class="card mb-4 box-shadow ">
+        <div class="card-header bg-info text-white">
+          <h4 class="my-0 font-weight-normal">Leaderboard</h4>
+        </div>
+        <div class="card-body">
+          <table class="table table-sm row-border hover table-striped" datatable [dtOptions]="dtOptions">
+            <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">Name</th>
+              <th scope="col">Country</th>
+              <th scope="col">Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>3</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-  
-  
+</div>
+
+
+
+
+

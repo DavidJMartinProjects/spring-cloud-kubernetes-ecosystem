@@ -5,6 +5,11 @@ import { PlayComponent } from './play/play.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [  
+  {
+    path: '',
+    redirectTo: "/register",
+    pathMatch: 'full'
+  },
   {path: 'register' , component: RegisterComponent},  
   {path: 'play' , component: PlayComponent},  
   {path: 'leaderboard' , component: LeaderboardComponent}  

@@ -9,6 +9,12 @@ export class RegisterComponent implements OnInit {
 
   constructor() { }
 
+  dtOptions: DataTables.Settings = {
+    searching: false,
+    paging: false,
+    info: false
+  };
+
   ngOnInit(): void {
   }
 

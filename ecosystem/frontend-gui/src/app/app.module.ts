@@ -8,6 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { PlayComponent } from './play/play.component';
 import { RegisterComponent } from './register/register.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { DataTablesModule } from "angular-datatables";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,6 +16,16 @@ npm install bootstrap jquery popper.js --save
 generate component
 from /src
 gng generate component <component-name>
+
+update dependancies
+npm i -g npm-check-updates
+ncu -u
+npm install
+
+
+Datatable calls using ajax
+http://l-lin.github.io/angular-datatables/#/basic/server-side-angular-way
+
 ****************************
 
 zipkin chart install
