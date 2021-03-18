@@ -26,7 +26,15 @@ npm install
 Datatable calls using ajax
 http://l-lin.github.io/angular-datatables/#/basic/server-side-angular-way
 
+Troubleshooting angular
+yarn add @angular-devkit/build-angular --dev
+ng add angular-datatables
+yarn add angular-datatables@11.1.1
+
 ****************************
+
+LOGO MAKER
+https://secure.logomaker.com/business-cards/step3/logo/807089740?suggest=1&return2flow=0jzhzxZIMYoMrT7tOVT62TX_0avR90INhk2SiiE...M3lUqVA7zz1oxrE_qaF4JUFZtVwDgxMPesM6jCE-
 
 zipkin chart install
 https://artifacthub.io/packages/helm/carlosjgp/zipkin?modal=install
