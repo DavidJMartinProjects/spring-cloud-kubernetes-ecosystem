@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,7 @@ import { PlayComponent } from './play/play.component';
 import { RegisterComponent } from './register/register.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { DataTablesModule } from "angular-datatables";
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomepageComponent,
     PlayComponent,
     RegisterComponent,
-    LeaderboardComponent    
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

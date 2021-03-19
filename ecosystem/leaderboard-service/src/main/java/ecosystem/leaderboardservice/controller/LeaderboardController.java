@@ -30,6 +30,7 @@ public class LeaderboardController {
 
     @GetMapping(LEADERBOARD_URI)
     @ResponseStatus(HttpStatus.OK)
+    @CrossOrigin(exposedHeaders="Access-Control-Allow-Origin")
     @ResponseBody
     public List<RankingDto> getLeaderboard() {
         log.info("received GET request to {} ", BASE_PATH + LEADERBOARD_URI);
