@@ -2,9 +2,17 @@ apiVersion: skaffold/v2beta12
 kind: Config
 metadata:
   name: ecosystem
+build:
+  local:
+    concurrency: 0 #builds all artifacts parallely
+requires:
+  - path: ./number-service
+  - path: ./gamification-service
+  - path: ./leaderboard-service
 deploy:
   kubectl:
     manifests:
     - nginx-ingress/nginx.deployment.yaml
     - nginx-ingress/cloud-generic.yaml
     - nginx-ingress/ingress.yaml
+
