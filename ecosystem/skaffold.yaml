@@ -4,7 +4,7 @@ metadata:
   name: ecosystem
 build:
   local:
-    concurrency: 0 #builds all artifacts parallely
+    concurrency: 0 #builds all artifacts in parallel
 requires:
   - path: ./number-service
   - path: ./gamification-service
